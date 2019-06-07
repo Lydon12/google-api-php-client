@@ -1,3 +1,13 @@
+require_once 'Google/autoload.php';
+
+$client = new \Google_Client();
+$client->setApplicationName('Shop_Inventory_Test');
+$client->setScopes([\Google_Service_Sheets::SPREADSHEETS]);
+$client->setAccessType('offline');
+$client->setAuthConfig('Google/servicekey.json');
+$service = new Google_Service_Sheets($client);
+$spreadsheetId = "1p7ltIgOYmukgs_MksnVq76mCpPlipJQXv5zprxBCq_0";
+
 {
     "name": "google/apiclient",
     "type": "library",
